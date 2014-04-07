@@ -1,0 +1,142 @@
+@font-face {
+    src: url(css/fonts/Helios.ttf); /* Путь к файлу со шрифтом */
+	src: url(css/fonts/Helios.woff) format('woff');
+	src: url(css/fonts/Helios.eot);
+	src: url(css/fonts/Helios.eot?#iefix) format('embedded-opentype');
+	src: url(css/fonts/Helios.otf);
+	
+	src: url(css/fonts/HeliosCond.ttf); /* Путь к файлу со шрифтом */
+	src: url(css/fonts/HeliosCond.woff) format('woff');
+	src: url(css/fonts/HeliosCond.eot);
+	src: url(css/fonts/HeliosCond.eot?#iefix) format('embedded-opentype');
+	src: url(css/fonts/HeliosCond.otf);
+					
+	src: url(css/fonts/HeliosThin.ttf); /* Путь к файлу со шрифтом */
+	src: url(css/fonts/HeliosThin.woff) format('woff');
+	src: url(css/fonts/HeliosThin.eot);
+	src: url(css/fonts/HeliosThin.eot?#iefix) format('embedded-opentype');
+	src: url(css/fonts/HeliosThin.otf);
+
+	src: url(css/fonts/HeliosLight.ttf); /* Путь к файлу со шрифтом */
+	src: url(css/fonts/HeliosLight.woff) format('woff');
+	src: url(css/fonts/HeliosLight.eot);
+	src: url(css/fonts/HeliosLight.eot?#iefix) format('embedded-opentype');
+	src: url(css/fonts/HeliosLight.otf);
+}
+.carousel-indicators li{
+	background: url("../images/icon/i.png") no-repeat;
+	height:6px;
+    width:6px;
+}
+.carousel-indicators .active {
+	background: url("../images/icon/i-active.png") no-repeat;
+    height: 6px;
+    width: 6px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: /*'Helios', HeliosCond,*/ 'Open Sans Condensed', sans-serif;
+}
+
+#header-wrapper .navbar-wrapper ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 15px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+	font-family: /*'Helios', Helios,*/'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+#header-wrapper .contact-wrapper .tel-thin {
+    color: #6b6b6b;
+    font-size: 20px;
+	font-family: /*'Helios', HeliosThin,*/ 'Open Sans', sans-serif;
+}
+#header-wrapper .contact-wrapper .tel-light {
+    font-size: 24px;
+	font-family: /*'Helios', HeliosLight,*/ 'Open Sans', sans-serif;
+}
+
+#question h3 {
+    font-weight: 300;
+    font-size: 22px;
+    margin: 0 0 15px;
+    font-family: /*'Helios', HeliosThin,*/ 'Open Sans', sans-serif;
+    color:gray;
+}
+
+#partners  h3 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 22px;
+    margin: 0 0 30px;
+    font-family: /*'Helios', HeliosThin,*/ 'Open Sans', sans-serif;
+    color:gray;
+}
+
+.phone-wrapper .phone {
+	font-family: /*'Helios', HeliosLight,*/ 'Open Sans', sans-serif;
+}
+
+.container-wrapper .page404 p {	
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: /*'Helios', HeliosCond,*/ 'Open Sans Condensed', sans-serif;
+    color:#a7bd2c;
+    font-size: 24px;
+    margin: 0px;
+}
+.rec-text {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: /*'Helios', HeliosCond,*/ 'Open Sans Condensed', sans-serif;
+    font-size: 18px;
+    padding-top: 65px;
+	margin-left: 35px;
+}
+.recomended .box {
+    display: inline-block;
+    float: left;
+    margin-right: 35px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: /*'Helios', HeliosCond,*/ 'Open Sans Condensed', sans-serif;
+    font-size: 18px;
+    line-height: 110%;
+}
+
+.container-wrapper h1 {
+    font-weight: bold;
+    font-family: /*'Helios', HeliosCond,*/ 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.container-wrapper .big-slogan {
+    font-size: 36px;
+    color: #1aa3f2;
+    font-weight: bold;
+    font-family: /*'Helios', HeliosCond,*/ 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
+    line-height: 100%;
+}
+ 
+.tl-h2 {
+	font-family: /*'Helios', HeliosCond,*/ 'Open Sans Condensed',sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+}
+.date-r {
+	float:right;
+	font-family: /*'Helios', HeliosCond,*/ 'Open Sans Condensed', sans-serif;
+	font-weight: bold;
+	margin: 5px 0;
+	color: #000;
+}
+ 
+#tel-bold {
+    font-family: /*'Helios', Helios,*/ 'Open Sans Condensed', sans-serif;	
+}
