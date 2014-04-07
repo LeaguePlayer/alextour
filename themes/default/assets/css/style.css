@@ -264,6 +264,20 @@ h2 {
 {
 	border-radius:500px;	
 }
-/************
- *  Команда
- ************/
+.container-wrapper p
+{
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+}
+
+.container-wrapper .content p
+{
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+.btn.red
+{
+	border:none;	
+}

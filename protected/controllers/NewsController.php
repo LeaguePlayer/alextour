@@ -37,6 +37,7 @@ class NewsController extends FrontController
 	
 	public function actionIndex()
 	{
+		Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/bootstrap.js', CClientScript::POS_END);
 		$node = Structure::model()->findByUrl('news');
         if ( !$node )
             throw new CHttpException(404, 'Новостей не найдено');
