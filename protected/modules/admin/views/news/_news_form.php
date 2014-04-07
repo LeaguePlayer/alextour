@@ -27,7 +27,7 @@
         <?php echo $form->error($model, 'img_preview'); ?>
     </div>
 
-    <?php // echo $form->textAreaControlGroup($model, 'short_desc', array('class'=>'span8', 'rows'=>6)) ?>
+    <?php  echo $form->textAreaControlGroup($model, 'short_desc', array('class'=>'span8', 'rows'=>6)) ?>
 
     <div class='control-group'>
         <?php echo CHtml::activeLabelEx($model, 'wswg_content'); ?>

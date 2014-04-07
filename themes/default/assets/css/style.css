@@ -260,7 +260,7 @@ h2 {
 	clear:none;
 	font-weight:bold;
 }
-.country img
+.country img, .tour-cont
 {
 	border-radius:500px;	
 }

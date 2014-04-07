@@ -27,17 +27,41 @@ class NewsController extends FrontController
 	}
 
 	
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel('News', $id),
-		));
-	}
+	public function actionView($id, $newsPage = null)
+    {
+        $model = $this->loadModel('News', $id);
+        $newslist = $model->list;
+        $node = $newslist->node;
+
+        $breadcrumbs = $node->getBreadcrumbs();
+        array_pop($breadcrumbs);
+        $breadcrumbs[$node->name] = $node->getUrl();
+        $breadcrumbs[] = $model->title;
+
+        $this->buildMenu($node);
+        $this->breadcrumbs = $breadcrumbs;
+
+        if ( !empty($model->seo->meta_title) )
+            $this->title = $model->seo->meta_title.' | '.Yii::app()->config->get('app.name');
+        else
+            $this->title = $model->title.' | '.Yii::app()->config->get('app.name');
+
+        Yii::app()->clientScript->registerMetaTag($model->seo->meta_desc, 'description', null, array('id'=>'meta_description'), 'meta_description');
+        Yii::app()->clientScript->registerMetaTag($model->seo->meta_keys, 'keywords', null, array('id'=>'keywords'), 'meta_keywords');
+
+        $this->render('view', array(
+            'model'=>$model,
+            'node'=>$node,
+            'newsPage'=>$newsPage
+        ));
+    }
 
 	
 	public function actionIndex()
 	{
 		Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/bootstrap.js', CClientScript::POS_END);
+		
+		
 		$node = Structure::model()->findByUrl('news');
         if ( !$node )
             throw new CHttpException(404, 'Новостей не найдено');

@@ -68,7 +68,7 @@ class Country extends EActiveRecord
 						'centeredpreview' => array(90, 90),
 					),
 					'small_icon' => array(
-						'resize' => array(25, 25),
+						'adaptiveResize' => array(25, 25),
 					),
 					'medium_icon' => array(
 						'adaptiveResize' => array(56, 56),

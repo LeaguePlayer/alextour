@@ -27,7 +27,11 @@
 
     <?php echo $form->textFieldControlGroup($model,'title',array('class'=>'span12','maxlength'=>255)); ?>
 
-    <?php echo $form->textAreaControlGroup($model,'description',array('rows'=>6, 'cols'=>50, 'class'=>'span12')); ?>
+    <?php // echo $form->textAreaControlGroup($model,'description',array('rows'=>6, 'cols'=>50, 'class'=>'span12')); ?>
+    
+    <?php echo $form->checkBoxControlGroup($model,'recommend'); ?>
+        
+        <?php echo $form->checkBoxControlGroup($model,'call_with_me'); ?>
 
     <div class='control-group'>
         <?php echo CHtml::activeLabelEx($model, 'wswg_body'); ?>
@@ -40,6 +44,8 @@
         )); ?>
         <?php echo $form->error($model, 'wswg_body'); ?>
     </div>
+    
+    	
 
 	<div class="form-actions">
 		<?php echo TbHtml::submitButton('Сохранить', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>

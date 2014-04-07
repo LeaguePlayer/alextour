@@ -29,7 +29,7 @@
         <?php $this->widget('zii.widgets.CListView', array(
 				'dataProvider'=>$dataProvider,
 				'template'=>'{items}{pager}',
-				'itemView'=>'_view',
+				'itemView'=>'/country/_view',
 				'afterAjaxUpdate' => 'animatecountry',
             )) 
 		?>

@@ -27,7 +27,7 @@ class Page extends StructureMaterial
     {
         return array(
             array('title', 'required'),
-            array('node_id, status, sort', 'numerical', 'integerOnly'=>true),
+            array('node_id, status, sort, call_with_me, recommend', 'numerical', 'integerOnly'=>true),
             array('title, img_preview', 'length', 'max'=>255),
             array('description, wswg_body, create_time, update_time', 'safe'),
             // The following rule is used by search().
@@ -57,6 +57,8 @@ class Page extends StructureMaterial
             'sort' => 'Вес для сортировки',
             'create_time' => 'Дата создания',
             'update_time' => 'Дата последнего редактирования',
+			'call_with_me'=>'Выводить блок: У Вас есть вопросы? Связаться!',
+			'recommend'=>'Выводить блок: Рекомендуем',
         );
     }
 

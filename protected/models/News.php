@@ -28,7 +28,7 @@ class News extends EActiveRecord
         return array(
             array('id_country, id_list, seo_id, status', 'numerical', 'integerOnly'=>true),
             array('title, img_preview', 'length', 'max'=>255),
-            array('wswg_content, create_time, update_time', 'safe'),
+            array('wswg_content, create_time, update_time, short_desc', 'safe'),
             // The following rule is used by search().
             array('id, title, img_preview, id_country, wswg_content, id_list, seo_id, status, create_time, update_time', 'safe', 'on'=>'search'),
         );
@@ -38,6 +38,8 @@ class News extends EActiveRecord
     public function relations()
     {
         return array(
+			'country' => array(self::BELONGS_TO, 'Country', 'id_country'),
+			  'list'=>array(self::BELONGS_TO, 'Newslist', 'id_list'),
         );
     }
 
@@ -55,6 +57,7 @@ class News extends EActiveRecord
             'status' => 'Статус',
             'create_time' => 'Дата создания',
             'update_time' => 'Дата последнего редактирования',
+			'short_desc'=>'Краткое описание',
         );
     }
 
@@ -100,8 +103,14 @@ class News extends EActiveRecord
 		$criteria->compare('status',$this->status);
 		$criteria->compare('create_time',$this->create_time,true);
 		$criteria->compare('update_time',$this->update_time,true);
+		
+		//$criteria->defaultOrder = "id DESC";
+		
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
+			'sort'=>array(
+				'defaultOrder'=>'id DESC',
+			),
         ));
     }
 

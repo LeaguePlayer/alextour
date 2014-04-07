@@ -4,7 +4,7 @@
                         <span >Рекомендуем</span> <i class="icon rright"></i>
                     </div>
                     <div class="col-lg-8">
-                        <a href="#" class="box">
+                        <a href="/page/goryashie-turi" class="box">
                             <img src="<?=$this->getAssetsUrl()?>/images/recomended/1.jpg" alt="" />
                             Горящие туры
                         </a>
@@ -12,9 +12,9 @@
                             <img src="<?=$this->getAssetsUrl()?>/images/recomended/2.jpg" alt="" />
                             Оформление виз
                         </a>
-                        <a href="#" class="box">
+                        <a href="/page/poisk-tyrov" class="box">
                             <img src="<?=$this->getAssetsUrl()?>/images/recomended/3.jpg" alt="" />
-                            Раннее<br />бронирование
+                            Бронирование <br />туров
                         </a>
                     </div>
                 </div>
