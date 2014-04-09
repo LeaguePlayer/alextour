@@ -23,7 +23,7 @@
 	$cs->registerScriptFile($this->getAssetsUrl().'/js/jquery-ui-i18n.js', CClientScript::POS_END);
 //	$cs->registerScriptFile($this->getAssetsUrl().'/js/chosen.jquery.min.js', CClientScript::POS_END);
 	$cs->registerScriptFile($this->getAssetsUrl().'/js/jquery.selectric.min.js', CClientScript::POS_END);
-	
+	$cs->registerScriptFile($this->getAssetsUrl().'/js/bootstrap.js', CClientScript::POS_END);
 	
 	
 	$cs->registerScriptFile($this->getAssetsUrl().'/js/common.js', CClientScript::POS_END);
@@ -121,6 +121,24 @@
         </div><!-- container -->
 
 
+	<div class="over" id="hide-layout"></div>
+    <div class="form_showed">
+    	<div class="centered">
+        	<h2>Оставить заявку</h2>
+            <form>
+            	<div class="top_part">
+                	<div class="left_p bpart"><input type="text" placeholder="Имя" value="" /></div>
+                    <div class="right_p bpart"><input type="text" placeholder="Телефон" value="" /></div>
+                </div>
+                <div class="bottom_part">
+                	<textarea placeholder="Комментарий"></textarea>
+                </div>
+                <div class="bottom_part with_button">
+                	<input type="submit" value="Отправить заявку" class="btn green" />  или <a class="close_modal" href="javascrip:void(0):">Отмена</a>
+                </div>
+            </form>
+        </div>
+    </div>
 
         <!-- Bootstrap core JavaScript
         ================================================== -->

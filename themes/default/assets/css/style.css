@@ -281,3 +281,87 @@ h2 {
 {
 	border:none;	
 }
+.over
+{
+	position: fixed;
+	background: #000;
+	height: 100%;
+	width: 100%;
+	opacity: .6;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	display: none;	
+	
+}
+.form_showed
+{
+	background:#dedede;
+	width:100%;
+	position:fixed;
+	height: 400px;
+	top:50%;
+	margin-top:-200px;
+	z-index:15;
+	border-top:1px solid #626162;
+	border-bottom:1px solid #d6d6d6;
+	display:none;
+	padding: 20px 0;
+}
+.form_showed .centered
+{
+	width:780px;
+	margin:auto;	
+}
+.top_part
+{
+	overflow:hidden;	
+}
+.top_part .bpart
+{
+	width:380px;	
+	display:inline-block;
+	margin-right:17px;
+	float:left;	
+}
+.top_part .bpart:last-child
+{
+	margin-right:0px;
+}
+.top_part .bpart input
+{
+	width:380px;
+	border:1px solid #bcbcbc;
+	background:#fff;	
+	height:44px;
+	padding:0 13px;
+	color:#000;
+}
+.bottom_part
+{
+	margin-top:17px;	
+}
+.bottom_part textarea
+{
+	width:778px;
+	border:1px solid #bcbcbc;
+	background:#fff;	
+	height:114px;
+	padding: 13px;
+	max-width:778px;
+	min-height:114px;
+	max-height:200px;
+	min-width:778px;
+}
+.with_button
+{
+	text-align:center;	
+}
+.with_button input
+{
+	border:none;	
+}
+body .btn.green
+{
+	font-size:19px;	
+}

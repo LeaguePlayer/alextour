@@ -1,7 +1,6 @@
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
-	'id'=>'partners-form',
+	'id'=>'reviews-form',
 	'enableAjaxValidation'=>false,
-		'htmlOptions' => array('enctype'=>'multipart/form-data'),
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
@@ -13,7 +12,7 @@
 
 	<div class="form-actions">
 		<?php echo TbHtml::submitButton('Сохранить', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
-        <?php echo TbHtml::linkButton('Отмена', array('url'=>array('/admin/partnerslist/update/', 'id'=>$model->id_list, 'node_id'=>$model->partnerslist->node_id))); ?>
+        <?php echo TbHtml::linkButton('Отмена', array('url'=>array('/admin/reviewslist/update/', 'id'=>$model->id_list, 'node_id'=>$model->reviewslist->node_id))); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

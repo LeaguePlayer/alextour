@@ -26,6 +26,7 @@
             </div>
 		
 			<form action="/page/poisk-tyrov" method="GET">
+            <input type="hidden" name="ts_dosearch" value="1" />
 				<div id="search-tour">
 					<h3>Подобрать тур</h3>
 					<div class="row margin-bottom-15">
@@ -70,7 +71,7 @@
 								<div class="col-lg-10"><input class="datepicker" placeholder="Вылет по " name="s_j_date_to" type="text" /></div>
 							</div>
 						</div>
-                        <input type="hidden" name="ts_dosearch" value="1" />
+                        
                         <input type="hidden" name="s_region_to" value="" />
                         <input type="hidden" name="s_child" value="0" />
                         
@@ -124,7 +125,7 @@
             <div id="question">
                 <h3>У вас есть к нам вопросы?</h3>
                 <div class=" phone-wrapper">
-                    <a href="#" class="btn green">
+                    <a href="javascript:void(0);" class="btn green call_modal">
                         Свяжитесь с нами
                     </a> 
 					<span class="phone"> +7 (3452)</span> <strong>30-57-93</strong><i class="icon phone"></i>

@@ -37,7 +37,7 @@ class CountryController extends FrontController
 	
 	public function actionIndex()
 	{
-		Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/bootstrap.js', CClientScript::POS_END);
+	//	Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/bootstrap.js', CClientScript::POS_END);
 	Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/carousel.js', CClientScript::POS_END);
 	
 		$node = Structure::model()->findByUrl('strani-mira');

@@ -2,7 +2,7 @@
 $this->breadcrumbs=array(
 	"{$model->translition()}"=>array('list'),
 	"{$model->reviewslist->node->name}"=>array('/admin/reviewslist/update/', 'id'=>$model->id_list, 'node_id'=>$model->reviewslist->node_id),
-	"Редактирование {$model->title}",
+	"Редактирование {$model->name}",
 );
 
 $this->menu=array(
@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Редактирование <?php echo $model->title; ?></h1>
+<h1>Редактирование <?php echo $model->name; ?></h1>
 
 <?php echo $this->renderPartial('_form',array('model'=>$model)); ?>
