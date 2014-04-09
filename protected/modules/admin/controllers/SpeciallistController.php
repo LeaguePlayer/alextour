@@ -16,7 +16,7 @@ class SpeciallistController extends AdminController
 
     public function actionUpdate($id)
     {
-        $model = $this->loadModel('speciallist', $id);
+        $model = $this->loadModel('Speciallist', $id);
         $specialFinder = new Special('search');
         $specialFinder->unsetAttributes();
         if ( isset($_GET['Special']) ) {

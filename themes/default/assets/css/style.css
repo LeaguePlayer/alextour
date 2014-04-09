@@ -365,3 +365,7 @@ body .btn.green
 {
 	font-size:19px;	
 }
+body .btn.green.small
+{
+	font-size:13px;	
+}

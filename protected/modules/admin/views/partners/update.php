@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	"{$model->translition()}"=>array('list'),
-	"{$model->reviewslist->node->name}"=>array('/admin/reviewslist/update/', 'id'=>$model->id_list, 'node_id'=>$model->reviewslist->node_id),
+	//"{$model->translition()}"=>array('list'),
+	"{$model->partnerslist->node->name}"=>array('/admin/partnerslist/update/', 'id'=>$model->id_list, 'node_id'=>$model->partnerslist->node_id),
 	"Редактирование {$model->title}",
 );
 
 $this->menu=array(
-	array('label'=>"Вернуться в {$model->reviewslist->node->name}",'url'=>array('/admin/reviewslist/update/', 'id'=>$model->id_list, 'node_id'=>$model->reviewslist->node_id)),
+	array('label'=>"Вернуться в {$model->partnerslist->node->name}",'url'=>array('/admin/partnerslist/update/', 'id'=>$model->id_list, 'node_id'=>$model->partnerslist->node_id)),
 );
 ?>
 

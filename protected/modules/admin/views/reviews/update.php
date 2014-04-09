@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	"{$model->translition()}"=>array('list'),
+	//"{$model->translition()}"=>array('list'),
 	"{$model->reviewslist->node->name}"=>array('/admin/reviewslist/update/', 'id'=>$model->id_list, 'node_id'=>$model->reviewslist->node_id),
 	"Редактирование {$model->name}",
 );

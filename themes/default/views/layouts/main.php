@@ -134,7 +134,7 @@
                 	<textarea placeholder="Комментарий"></textarea>
                 </div>
                 <div class="bottom_part with_button">
-                	<input type="submit" value="Отправить заявку" class="btn green" />  или <a class="close_modal" href="javascrip:void(0):">Отмена</a>
+                	<input type="submit" value="Отправить заявку" class="btn green" />  или <a class="close_modal" href="javascrip:void(0):" style="margin-left:20px;">Отмена</a>
                 </div>
             </form>
         </div>
