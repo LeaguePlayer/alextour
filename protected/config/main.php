@@ -21,6 +21,7 @@ return array_replace_recursive(
         ),
         'aliases'=>array(
             'appext'=>'application.extensions',
+			
         ),
         'modules'=>array(
             'admin'=>array(),
@@ -85,7 +86,7 @@ return array_replace_recursive(
                 'rules'=>array(
                     'gii'=>'gii',
                     'admin'=>'admin/structure',
-					'<controller:newslist|countrylist>/<url>' => '<controller>/view',
+					'<controller:newslist|countrylist|reviewslist|speciallist>/<url>' => '<controller>/view',
 				//	'<url>'=>'/countrylist/view/',
 					'country/<country_title>/<id_page>'=>'pagecountry/view',
                     'admin/<controller:!config>' => 'admin/<controller>/list',

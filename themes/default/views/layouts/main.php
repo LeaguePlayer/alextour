@@ -100,7 +100,7 @@
                         <p class="copyright">Alex-tour 2011-2013</p>
                     </div>
                     <div class="col-lg-5 phone-wrapper">
-                        <a href="#" class="btn green small">
+                        <a href="javascript:void(0);" data-target="mail" class="btn green small call_modal">
                             Свяжитесь с нами
                         </a> 
 						<span class="phone">+7 (3452)</span> <strong>30-57-93</strong><i class="icon phone"></i>
@@ -124,18 +124,27 @@
 	<div class="over" id="hide-layout"></div>
     <div class="form_showed">
     	<div class="centered">
-        	<h2>Оставить заявку</h2>
-            <form>
+        	<h2>Оставить <span data-meta="title">заявку</span></h2>
+            <form class="ajaxForm" data-meta="url" action="/" method="GET">
             	<div class="top_part">
-                	<div class="left_p bpart"><input type="text" placeholder="Имя" value="" /></div>
-                    <div class="right_p bpart"><input type="text" placeholder="Телефон" value="" /></div>
+                	<div class="left_p bpart"><input data-type="field" data-field="name" type="text" name="data[name]" placeholder="Имя" value="" /></div>
+                    <div class="right_p bpart"><input data-meta="phone" data-type="field" data-field="phone" type="text" name="data[phone]" placeholder="Телефон" value="" /></div>
                 </div>
                 <div class="bottom_part">
-                	<textarea placeholder="Комментарий"></textarea>
+                	<textarea data-field="review" data-type="field" name="data[review]" placeholder="Комментарий"></textarea>
+                </div>
+                <div data-meta="rating" class="bottom_part rating">
+                <span data-field="rating" data-type="field">Поставьте оценку</span>
+                	<div class="star"><input type="radio" name="data[rating]" value="1"></div>
+                    <div class="star"><input type="radio" name="data[rating]" value="2"></div>
+                    <div class="star"><input type="radio" name="data[rating]" value="3"></div>
+                    <div class="star"><input type="radio" name="data[rating]" value="4"></div>
+                    <div class="star"><input type="radio" name="data[rating]" value="5"></div>
                 </div>
                 <div class="bottom_part with_button">
                 	<input type="submit" value="Отправить заявку" class="btn green" />  или <a class="close_modal" href="javascrip:void(0):" style="margin-left:20px;">Отмена</a>
                 </div>
+                
             </form>
         </div>
     </div>

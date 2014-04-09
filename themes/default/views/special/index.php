@@ -1,20 +1,46 @@
+<div class="width_980">
+    <?php $this->widget('zii.widgets.CBreadcrumbs', array(
+        'separator'=>' → ',
+        'links'=>$this->breadcrumbs,
+    )); ?>
+</div>
+
 <?php
-/* @var $this SpecialController */
-/* @var $dataProvider CActiveDataProvider */
-
-$this->breadcrumbs=array(
-	'Specials',
-);
-
-$this->menu=array(
-	array('label'=>'Create Special', 'url'=>array('create')),
-	array('label'=>'Manage Special', 'url'=>array('admin')),
-);
+    Yii::app()->clientScript->registerScript('animatespecial',
+        "var animatespecial = function() {
+            var destination = $('#special_wrap').offset().top;
+            $('html, body').animate({
+                scrollTop: destination + 'px'
+            }, {
+                duration: 300
+            });
+        }");
 ?>
 
-<h1>Specials</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+
+
+					
+					
+
+				
+            
+            
+
+<div class="container-wrapper">
+	<div class="row">
+       
+
+
+        <?php $this->widget('zii.widgets.CListView', array(
+				'dataProvider'=>$dataProvider,
+				'template'=>'{items}{pager}',
+				'itemView'=>'/special/_view',
+				'afterAjaxUpdate' => 'animatespecial',
+            )) 
+		?>
+   </div>
+</div>
+
+
+<? $this->renderPartial('/site/_recomended'); ?>

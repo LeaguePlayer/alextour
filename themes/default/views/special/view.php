@@ -1,25 +1,10 @@
-<?php
-$this->breadcrumbs=array(
-	'Specials'=>array('index'),
-	$model->title,
-);
+<div class="width_980">
+    <?php $this->widget('zii.widgets.CBreadcrumbs', array(
+        'separator'=>' → ',
+        'links'=>$this->breadcrumbs,
+    )); ?>
+</div>
 
-<h1>View Special #<?php echo $model->id; ?></h1>
+<h1><?=$model->title?></h1>
 
-<?php $this->widget('bootstrap.widgets.TbDetailView',array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'img_preview',
-		'title',
-		'short_desc',
-		'wswg_content',
-		'price',
-		'duration',
-		'id_list',
-		'status',
-		'sort',
-		'create_time',
-		'update_time',
-	),
-)); ?>
+<div><?=$model->wswg_content;?></div>

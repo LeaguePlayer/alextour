@@ -1,42 +1,17 @@
-<div class="view">
+<div class="review_b">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id),array('view','id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-	<?php echo CHtml::encode($data->name); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('review')); ?>:</b>
-	<?php echo CHtml::encode($data->review); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('rating')); ?>:</b>
-	<?php echo CHtml::encode($data->rating); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id_list')); ?>:</b>
-	<?php echo CHtml::encode($data->id_list); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>
-	<?php echo CHtml::encode($data->status); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('sort')); ?>:</b>
-	<?php echo CHtml::encode($data->sort); ?>
-	<br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
-	<?php echo CHtml::encode($data->create_time); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('update_time')); ?>:</b>
-	<?php echo CHtml::encode($data->update_time); ?>
-	<br />
-
-	*/ ?>
-
+	<div class="r_name"><? echo $data->name; ?>, <? echo date('d/m/Y',strtotime($data->create_time));?></div>
+    
+    <div class="r_desc"><? echo $data->review; ?></div>
+	
+    <div class="r_rating">
+    	<? 
+			for ($i = 0; $i < 5; $i++) 
+			{ 
+				echo ($data->rating > 0) ? "<div class='star fill'></div>" : "<div class='star'></div>";
+				$data->rating--;
+			} 
+		?>
+    </div>
+    
 </div>

@@ -23,6 +23,7 @@ class FrontController extends Controller
     {
 		$this->buildMenu();
         $this->renderPartial('//layouts/clips/_main_menu');
+		//Yii::app()->getComponent('bootstrap')->register();
         return parent::beforeRender($view);
     }
 

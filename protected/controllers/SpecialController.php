@@ -29,8 +29,19 @@ class SpecialController extends FrontController
 	
 	public function actionView($id)
 	{
+		$model = $this->loadModel('Special', $id);
+		if ( !$model )
+			throw new CHttpException(404, 'Новостей не найдено');
+			
+		
+			
+		$this->breadcrumbs=array(
+						"{$model->speciallist->node->name}"=>$model->speciallist->node->getUrl(),
+						"{$model->title}",
+					);
+					
 		$this->render('view',array(
-			'model'=>$this->loadModel('Special', $id),
+			'model'=>$model,
 		));
 	}
 

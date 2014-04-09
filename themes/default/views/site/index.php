@@ -8,10 +8,10 @@
                     </a>
                 </div>
                 <div class="col-lg-2" id="request">
-                    <a href="#" class="request-1">
+                    <a href="javascript:void(0);" data-target="mail" class="request-1 call_modal">
                         <h3>Оставить <br />заявку</h3>
                     </a>
-					<a href="#" class="request-2">
+					<a href="javascript:void(0);" data-target="mail" class="request-2 call_modal">
                         <h3>Жми сейчас</h3>
                     </a>
                 </div>
@@ -89,10 +89,10 @@
 		
             <div class="row line-2">
                 <div class="col-lg-2" id="reviews">
-                    <a href="#" class="reviews-1">
+                    <a href="/reviewslist/otzivi" class="reviews-1">
 						<h3>Отзывы</h3>
 					</a>
-					<a href="#" class="reviews-2">
+					<a href="/reviewslist/otzivi" class="reviews-2">
 						<h3>Оставить отзыв</h3>
 					</a>
                 </div>
@@ -105,10 +105,10 @@
 					</a>
                 </div>
                 <div class="col-lg-4" id="special">
-                    <a href="#" class="special-1">
+                    <a href="/speciallist/specialnie_prdlozheniya" class="special-1">
 						<h3>Спецпредложение</h3>
 					</a>
-					<a href="#" class="special-2">
+					<a href="/speciallist/specialnie_prdlozheniya" class="special-2">
 						<h3>С нами удобно</h3>
 					</a>
                 </div>
@@ -125,7 +125,7 @@
             <div id="question">
                 <h3>У вас есть к нам вопросы?</h3>
                 <div class=" phone-wrapper">
-                    <a href="javascript:void(0);" class="btn green call_modal">
+                    <a href="javascript:void(0);" data-target="mail" class="btn green call_modal">
                         Свяжитесь с нами
                     </a> 
 					<span class="phone"> +7 (3452)</span> <strong>30-57-93</strong><i class="icon phone"></i>

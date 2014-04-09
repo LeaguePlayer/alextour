@@ -28,7 +28,7 @@ class Special extends EActiveRecord
     public function rules()
     {
         return array(
-			array('short_desc, wswg_content', 'required'),
+			array('short_desc, wswg_content, title', 'required'),
             array('price, duration, id_list, status, sort', 'numerical', 'integerOnly'=>true),
             array('img_preview, title, short_desc', 'length', 'max'=>255),
             array('wswg_content, create_time, update_time', 'safe'),
@@ -76,7 +76,7 @@ class Special extends EActiveRecord
 						'centeredpreview' => array(90, 90),
 					),
 					'small' => array(
-						'resize' => array(200, 180),
+						'centeredpreview' => array(166, 124),
 					)
 				),
 			),
@@ -104,9 +104,12 @@ class Special extends EActiveRecord
 		$criteria->compare('sort',$this->sort);
 		$criteria->compare('create_time',$this->create_time,true);
 		$criteria->compare('update_time',$this->update_time,true);
-        $criteria->order = 'sort';
+       // $criteria->order = 'sort';
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
+			'sort'=>array(
+				'defaultOrder'=>'id DESC',
+			),
         ));
     }
 

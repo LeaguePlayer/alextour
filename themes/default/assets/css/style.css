@@ -369,3 +369,119 @@ body .btn.green.small
 {
 	font-size:13px;	
 }
+.special_b
+{
+	width:166px;
+	background:#f4f5f9;
+	display:inline-block;
+	margin: 0 30px 29px 0;
+	font-family: Myriad Pro, sans-serif;
+	vertical-align: top;
+}
+.s_content
+{
+	
+	padding:10px 0;
+	position:relative;
+	border-bottom:1px solid #d7dae0;
+	
+}
+.s_content .s_title
+{
+	
+	color:#616c7a;
+	font-size:14px;
+	font-weight:bold;
+}
+.s_content .s_desc
+{
+	color:#616c7a;
+	font-size:11px;	
+}
+.s_content .s_price
+{
+	font-size:16px;
+	color:#785db3;
+	font-weight:bold;	
+}
+.s_content .s_part
+{
+	margin-left:12px;
+	margin-bottom:7px;
+}	
+.s_content .s_part:last-child
+{
+	margin-bottom:0px;
+}	
+.special_b .s_duration
+{
+	font-size:11px;
+	color:#616c7a;
+	text-align:center;
+	padding: 6px 0;
+}
+.s_content .s_more
+{
+	position:absolute;
+	bottom:0;
+	right: 0;
+	background:#51b7ef;
+	color:#fff;
+	text-decoration:none;
+	padding:3px 5px;
+	font-size:11px;	
+}
+.s_content .s_more:hover
+{
+	text-decoration:underline;	
+}
+.row .review_b
+{
+	border-top:1px solid #e2eae9;	
+	padding: 20px 0;
+}
+.row .review_b:last-child
+{
+	border-bottom:1px solid #e2eae9;	
+}
+.row .review_b .r_name
+{
+	font-family: Myriad Pro, sans-serif;
+	font-size:16px;
+	color:#7a93ab	
+}
+.row .review_b .r_desc
+{
+	font-size:13px;
+	color:#aeaeae;
+	margin:25px 0 18px 0;	
+}
+.star
+{
+	display:inline-block;
+	width:14px;
+	height:13px;
+	margin-right:3px;	
+	background-image: url(../images/s_stars.png);
+	background-position: left top;
+}
+.star.fill
+{
+	background-position: -13px top;
+}
+h1.h_review a
+{
+		margin-left:25px;
+		text-align:center;
+		font-size:14px;
+		position:relative;
+		top:-4px;
+}
+.rating .star input
+{
+	display:none;	
+}
+.rating .star
+{
+	cursor:pointer;	
+}

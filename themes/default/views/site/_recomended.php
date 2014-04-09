@@ -8,7 +8,7 @@
                             <img src="<?=$this->getAssetsUrl()?>/images/recomended/1.jpg" alt="" />
                             Горящие туры
                         </a>
-                        <a href="#" class="box">
+                        <a href="/page/viza" class="box">
                             <img src="<?=$this->getAssetsUrl()?>/images/recomended/2.jpg" alt="" />
                             Оформление виз
                         </a>

@@ -101,7 +101,7 @@ class Countrylist extends EActiveRecord
         $criteria->compare('id_list', $this->id);
         $criteria->compare('status', News::STATUS_PUBLISH);
         $criteria->order = 'create_time DESC';
-       // $pageSize = $count ? $count : ( is_numeric($this->page_size) ? $this->page_size : 5 );
+       $pageSize = 9999;
         return new CActiveDataProvider('Country', array(
             'criteria'=>$criteria,
             'pagination'=>array(

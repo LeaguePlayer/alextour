@@ -27,12 +27,32 @@ class ReviewslistController extends FrontController
 	}
 
 	
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel('Reviewslist', $id),
-		));
-	}
+	public function actionView($url = 'otzivi')
+    {
+		//Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/bootstrap.js', CClientScript::POS_END);
+		
+		
+        $node = Structure::model()->findByUrl($url);
+        if ( !$node )
+            throw new CHttpException(404, 'Новостей не найдено');
+        $reviewslist = $node->getComponent();
+        $dataProvider = $reviewslist->reviewsSearch();
+
+       // $this->buildMenu($node);
+        $this->breadcrumbs = $node->getBreadcrumbs();
+
+        if ( !empty($node->seo->meta_title) )
+            $this->title = $node->seo->meta_title.' | '.Yii::app()->config->get('app.name');
+        else
+            $this->title = $node->name.' | '.Yii::app()->config->get('app.name');
+        Yii::app()->clientScript->registerMetaTag($node->seo->meta_desc, 'description', null, array('id'=>'meta_description'), 'meta_description');
+        Yii::app()->clientScript->registerMetaTag($node->seo->meta_keys, 'keywords', null, array('id'=>'keywords'), 'meta_keywords');
+
+        $this->render('/reviews/index', array(
+            'dataProvider'=>$dataProvider,
+            'node'=>$node
+        ));
+    }
 
 	
 	public function actionIndex()
