@@ -22,6 +22,39 @@ class SiteController extends FrontController
 			),
 		);
 	}
+	
+	public function actionFeedback()
+	{
+		if( isset($_POST['data']) )
+		{
+			$model = new Reviews;
+			$model->attributes = $_POST['data'];
+			$model->status = 0;
+			$model->id_list = 1;
+			if($model->save())
+			{
+						if($model->name) $message .="Имя: {$model->name}<br>";
+						//if($model->phone) $message .="Номер телефона: {$model->phone}<br>";
+						if($model->rating) $message .="Оценка: {$model->rating}<br>";
+						if($model->review) $message .="Комментарий: {$model->review}<br>";
+						//$message.="{$model->create_time}";
+						$message.="http://{$_SERVER['SERVER_NAME']}/admin/reviews/update/id/{$model->id}/list_id/{$model->id_list}";
+						
+							$date = date('d.m.Y H:i');
+							$message .="Время заявки: {$date}<br>";	
+						
+
+
+						if(SiteHelper::sendMail("Получен новый отзыв на сайте!",$message,"minderov@amobile-studio.ru","minderov@amobile-studio.ru")) 
+				echo CJSON::encode("OK");
+			}
+			else
+			{
+				//print_r($model->getErrors());
+				echo CJSON::encode($model->getErrors());	
+			}
+		}
+	}
 
 	/**
 	 * This is the default 'index' action that is invoked
