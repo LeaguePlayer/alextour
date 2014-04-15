@@ -62,6 +62,7 @@ class SiteController extends FrontController
 	 */
 	public function actionIndex()
 	{
+		$this->initGoogleMap();
         $this->title = Yii::app()->config->get('app.name');
 		
 		$data = array();

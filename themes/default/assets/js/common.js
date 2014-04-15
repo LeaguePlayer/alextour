@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
 
 	//alert("Ну привет! =)");
@@ -35,8 +37,18 @@ $(document).ready(function() {
 		var form  = $(this);
 		var data = $(this).serialize();
 		
-							$('*[data-type="field"]').css('border','none');
-							$('*[data-type="field"]').css('color','#000');
+		var existLoader = ($(this).find('.i_text').size()) ? true : false;
+		
+		//window.exBorder = $('*[data-type="field"]').css('border');
+		
+							//$('*[data-type="field"]').css('border','none');
+							//$('*[data-type="field"]').css('color','#000');
+							$('*[data-type="field"]').removeClass('error');
+							
+		if(existLoader)
+		{
+				$(form).find('.i_text').addClass('load');
+		}
 		
 		$.ajax({
 				  url: $(this).attr('action'),
@@ -45,21 +57,28 @@ $(document).ready(function() {
 				  dataType: "json",
 				  
 				  success: function(data) {
+					  
+					 
 					   
 					  if(data == "OK")
 					  {
 						 
-						  window.location.href = "/spasibo";
+						  window.location.href = "/page/spasibo";
 					  }
 					  else
 					  {
 						  	
 						  $.each(data, function(key, value){
-							  
-							  $('textarea[data-field="'+key+'"]').css('border','1px solid #F00');
-							  $('input[data-field="'+key+'"]').css('border','1px solid #F00');
-							  $('span[data-field="'+key+'"]').css('color','#F00');
+							  $('*[data-field="'+key+'"]').addClass('error');
+							 // $('textarea[data-field="'+key+'"]').css('border','1px solid #F00');
+							 // $('input[data-field="'+key+'"]').css('border','1px solid #F00');
+							 // $('span[data-field="'+key+'"]').css('color','#F00');
 						  });
+						  
+						   if(existLoader)
+							{
+									$(form).find('.i_text').removeClass('load');
+							}
 					  }
 					
 				  }
@@ -99,8 +118,9 @@ var modalForm = {
 	
 	show: function( target )
 			{
-				$('*[data-type="field"]').css('border','none');
-				$('*[data-type="field"]').css('color','#000');
+			//	$('*[data-type="field"]').css('border','none');
+			//	$('*[data-type="field"]').css('color','#000');
+			$('*[data-type="field"]').removeClass('error');
 				
 					$('*[data-meta="title"]').text( targets[target].title );
 					$('*[data-meta="url"]').attr( 'action', targets[target].url );

@@ -41,7 +41,7 @@ class ReviewsController extends FrontController
 						if($model->rating) $message .="Оценка: {$model->rating}<br>";
 						if($model->review) $message .="Комментарий: {$model->review}<br>";
 						//$message.="{$model->create_time}";
-						$message.="http://{$_SERVER['SERVER_NAME']}/admin/reviews/update/id/{$model->id}/list_id/{$model->id_list}";
+						$message.="http://{$_SERVER['SERVER_NAME']}/admin/reviews/update/id/{$model->id}/list_id/{$model->id_list}<br>";
 						
 							$date = date('d.m.Y H:i');
 							$message .="Время заявки: {$date}<br>";	
