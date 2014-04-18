@@ -151,6 +151,53 @@ class SiteHelper {
 	    $message = str_replace("\n.", "\n..", $message);
         return mail($to,'=?UTF-8?B?'.base64_encode($subject).'?=',$message,$headers);
     }
+
+	public static function getCountry($name = false)
+	{
+		$array = array( 
+						31 => "Австрия",
+						17 => "Андорра",
+						20 => "Болгария",
+						37 => "Венгрия",
+						38 => "Германия",
+						6 => "Греция",
+						1 => "Египет",
+						30 => "Израиль",
+						7 => "Индонезия",
+						29 => "Иордания",
+						14 => "Испания",
+						24 => "Италия",
+						40 => "Камбоджа",
+						15 => "Кипр",
+						13 => "Китай",
+						36 => "Малайзия",
+						
+						8 => "Мальдивы",
+						9 => "ОАЭ",
+						2 => "Таиланд",
+						4 => "Турция",
+						32 => "Франция",
+						22 => "Хорватия",
+						21 => "Черногория",
+						19 => "Чехия",
+						12 => "Шри Ланка",
+						
+		 );
+		 
+		 foreach($array as $key => $value)
+		 	$fix_array[$key] = mb_strtolower($value, 'UTF-8');
+			
+				 
+		 if($name)
+		 {
+			 $key = array_search( mb_strtolower($name, 'UTF-8'), $fix_array);
+			 return $key;
+		 }
+		 else
+		 	 return $array;
+		 
+	}
+	
 	
 	
 }

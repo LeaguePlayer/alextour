@@ -105,7 +105,7 @@ var mail = {   "title": "заявку",
 
 				 "display": "none",
 			
-				 "url": "/2",
+				 "url": "/site/feedback",
 				 
 				 "phone": "block",
 				 

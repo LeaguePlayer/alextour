@@ -32,6 +32,8 @@
     <?php echo $form->checkBoxControlGroup($model,'recommend'); ?>
         
         <?php echo $form->checkBoxControlGroup($model,'call_with_me'); ?>
+        
+        <?php echo $form->checkBoxControlGroup($model,'map'); ?>
 
     <div class='control-group'>
         <?php echo CHtml::activeLabelEx($model, 'wswg_body'); ?>

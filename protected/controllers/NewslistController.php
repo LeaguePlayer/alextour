@@ -27,16 +27,22 @@ class NewslistController extends FrontController
 	}
 
 	
-	public function actionView($url = 'news')
+	public function actionView($url = 'news', $country = false)
     {
 		Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/bootstrap.js', CClientScript::POS_END);
+		
+		if($country)
+		{
+			$country_model = Country::model()->find( "LOWER(title) = :country", array(':country'=>mb_strtolower($country, 'UTF-8')) );
+			$id_country =  (is_object($country_model)) ? $country_model->id : 0;
+		}
 		
 		
         $node = Structure::model()->findByUrl($url);
         if ( !$node )
             throw new CHttpException(404, 'Новостей не найдено');
         $newslist = $node->getComponent();
-        $dataProvider = $newslist->newsSearch();
+        $dataProvider = $newslist->newsSearch(null, $id_country);
 
         $this->buildMenu($node);
         $this->breadcrumbs = $node->getBreadcrumbs();
@@ -50,7 +56,8 @@ class NewslistController extends FrontController
 
         $this->render('/news/index', array(
             'dataProvider'=>$dataProvider,
-            'node'=>$node
+            'node'=>$node,
+			'country'=>$country,
         ));
     }
 

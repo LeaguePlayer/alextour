@@ -30,7 +30,7 @@
 ?><!DOCTYPE HTML>
 <html>
     <head>
-        <title></title>
+        <title><?=$this->title?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
@@ -88,7 +88,7 @@
                     <? $this->renderPartial('/site/_menu',array('menu'=>$this->menu)); ?>
                 </div>
                 <div class="contact-wrapper">
-                    <span class="tel-thin">свяжитесь с нами: </span><span class="tel-light"><i class="icon phone"></i> +7 (3452)</span> <strong>30-57-93</strong>
+                    <span class="tel-thin">свяжитесь с нами: </span><span class="tel-light"><i class="icon phone"></i> +7 (<?=Yii::app()->config->get('app.code_city');?>)</span> <strong><?=Yii::app()->config->get('app.phone');?></strong>
                 </div>
             </div>
 
@@ -97,19 +97,21 @@
             <footer>
                 <div class="row">
                     <div class="col-lg-2">
-                        <p class="copyright">Alex-tour 2011-2013</p>
+                        <p class="copyright"><?php echo Yii::app()->config->get('app.company_name'); ?> <?php echo Yii::app()->config->get('app.year_begin'); ?>-<?=date('Y')?></p>
                     </div>
                     <div class="col-lg-5 phone-wrapper">
                         <a href="javascript:void(0);" data-target="mail" class="btn green small call_modal">
                             Свяжитесь с нами
                         </a> 
-						<span class="phone">+7 (3452)</span> <strong>30-57-93</strong><i class="icon phone"></i>
+						<span class="phone">+7 (<?=Yii::app()->config->get('app.code_city');?>)</span> <strong><?=Yii::app()->config->get('app.phone');?></strong><i class="icon phone"></i>
+                        
+                      
                     </div>
                     <div class="col-lg-3">
-                        <a href="#" class="social twitter"></a>
-                        <a href="#" class="social photo"></a>
-                        <a href="#" class="social fb"></a>
-                        <a href="#" class="social skype"></a>
+                        <? if(Yii::app()->config->get('app.tw')){ ?><a href="<?=Yii::app()->config->get('app.tw')?>" class="social twitter"></a><? } ?>
+                        <? if(Yii::app()->config->get('app.insta')){ ?><a href="<?=Yii::app()->config->get('app.insta')?>" class="social photo"></a><? } ?>
+                        <? if(Yii::app()->config->get('app.fb')){ ?><a href="<?=Yii::app()->config->get('app.fb')?>" class="social fb"></a><? } ?>
+                        <? if(Yii::app()->config->get('app.skype')){ ?><a href="<?=Yii::app()->config->get('app.skype')?>" class="social skype"></a><? } ?>
                     </div>
                     <div class="col-lg-2 a-right a-mobile-logo">
                         <a href="#">
@@ -127,8 +129,8 @@
         	<h2>Оставить <span data-meta="title">заявку</span></h2>
             <form class="ajaxForm" data-meta="url" action="/" method="GET">
             	<div class="top_part">
-                	<div class="left_p bpart"><input data-type="field" data-field="name" type="text" name="data[name]" placeholder="Имя" value="" /></div>
-                    <div class="right_p bpart"><input data-meta="phone" data-type="field" data-field="phone" type="text" name="data[phone]" placeholder="Телефон" value="" /></div>
+                	<div class="left_p bpart">Как Вас зовут?<input data-type="field" data-field="name" type="text" name="data[name]" value="" /></div>
+                    <div class="right_p bpart">Ваш номер телефона?<input data-meta="phone" data-type="field" data-field="phone" type="text" name="data[phone]" value="" /></div>
                 </div>
                 <div class="bottom_part">
                 	<textarea data-field="review" data-type="field" name="data[review]" placeholder="Комментарий"></textarea>

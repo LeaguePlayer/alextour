@@ -18,5 +18,5 @@
                         </a>
                     </div>
                 </div>
-                <p class="a-right">Alex tour с нами просто и удобно!</p>
+                <p class="a-right"><?=Yii::app()->config->get('app.slogan');?></p>
             </div>

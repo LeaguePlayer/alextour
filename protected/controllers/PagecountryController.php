@@ -27,20 +27,44 @@ class PagecountryController extends FrontController
 	}
 
 	
-	public function actionView($country_title, $id_page)
+	public function actionView($country_title, $id_page, $return_to_news = false, $country = false)
 	{
+		
+		
 		$model = Pagecountry::model()->findByPk($id_page);
 		if( ! $model )
 			 throw new CHttpException(404, 'Новостей не найдено');
 		
-		$this->breadcrumbs=array(
-						"{$country_title}"=>array('/country'),
-						"{$model->title}",
-					);
+		//$part_breadcrumbs = ($return_to_news) ? array("Новости"=>array('/newslist/news')) : array("{$country_title}"=>array('/country'));
+		
+		if($return_to_news)
+		{
+			if($country)
+				$breadcrumbs =  array("Новости"=>array("/newslist/view/url/news/country/{$country}"),
+								  "{$model->title}",
+								 );
+			else
+				$breadcrumbs =  array("Новости"=>array('/newslist/news'),
+								  "{$model->title}",
+								 );
+			
+			
+								 
+								 
+				
+		}
+				else
+					$breadcrumbs =  array("{$country_title}"=>array('/country'),
+								  "{$model->title}",
+								 );
+		
+		
+		$this->breadcrumbs = $breadcrumbs;
 
 		
 		$this->render('view',array(
 			'model'=>$model,
+			'return_to_news'=>$return_to_news,
 		));
 	}
 

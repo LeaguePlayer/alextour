@@ -35,6 +35,7 @@
         <?php $this->widget('zii.widgets.CListView', array(
 				'dataProvider'=>$dataProvider,
 				'template'=>'{items}{pager}',
+				'viewData'=>array('country'=>$country),
 				'itemView'=>'/news/_item',
 				'afterAjaxUpdate' => 'animateNews',
             )) 

@@ -9,6 +9,8 @@
 
 <div><?=$page->wswg_body?></div>
 
+<? if($page->map) { ?></div><div class="map_in_page" id="map"></div><div class="container"><? } ?>
+
 <? if($page->call_with_me) $this->renderPartial('/site/_call_with_me'); ?>
 
 <? if($page->recommend) $this->renderPartial('/site/_recomended'); ?>

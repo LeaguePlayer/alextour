@@ -185,18 +185,7 @@ class EActiveRecord extends CActiveRecord
         return parent::beforeSave();
     }
 
-    public function beforeDelete()
-    {
-        if($this->hasAttribute('status') && $this->status == self::STATUS_DEFAULT)
-        {
-            $this->status = self::STATUS_REMOVED;
-            $this->save(false, array('status'));
-
-            return false;
-        }
-
-        return parent::beforeDelete();
-    }
+   
 
     public function translition()
     {

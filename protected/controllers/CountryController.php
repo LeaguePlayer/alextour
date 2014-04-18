@@ -37,8 +37,8 @@ class CountryController extends FrontController
 	
 	public function actionIndex()
 	{
-	//	Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/bootstrap.js', CClientScript::POS_END);
-	Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/carousel.js', CClientScript::POS_END);
+		//	Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/bootstrap.js', CClientScript::POS_END);
+		Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/carousel.js', CClientScript::POS_END);
 	
 		$node = Structure::model()->findByUrl('strani-mira');
         if ( !$node )
@@ -52,7 +52,7 @@ class CountryController extends FrontController
         $this->breadcrumbs = $node->getBreadcrumbs();
 
         if ( !empty($node->seo->meta_title) )
-            $this->title = $node->seo->meta_title.' | '.Yii::app()->config->get('app.name');
+            $this->title = $node->seo->meta_title;
         else
             $this->title = $node->name.' | '.Yii::app()->config->get('app.name');
         Yii::app()->clientScript->registerMetaTag($node->seo->meta_desc, 'description', null, array('id'=>'meta_description'), 'meta_description');

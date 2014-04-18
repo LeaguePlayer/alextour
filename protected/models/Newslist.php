@@ -74,11 +74,14 @@ class Newslist extends CActiveRecord
     }
 
 
-    public function newsSearch($count = null)
+    public function newsSearch($count = null, $id_country = false)
     {
         $criteria = new CDbCriteria();
         $criteria->compare('id_list', $this->id);
         $criteria->compare('status', News::STATUS_PUBLISH);
+		
+		if(is_numeric($id_country)) $criteria->addCondition("id_country = {$id_country}");
+		
         $criteria->order = 'create_time DESC';
         $pageSize = $count ? $count : ( is_numeric($this->page_size) ? $this->page_size : 5 );
         return new CActiveDataProvider('News', array(

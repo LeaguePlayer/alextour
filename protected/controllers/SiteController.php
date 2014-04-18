@@ -27,25 +27,26 @@ class SiteController extends FrontController
 	{
 		if( isset($_POST['data']) )
 		{
-			$model = new Reviews;
+			
+			$model = new Orders;
 			$model->attributes = $_POST['data'];
 			$model->status = 0;
-			$model->id_list = 1;
+			
 			if($model->save())
 			{
 						if($model->name) $message .="Имя: {$model->name}<br>";
-						//if($model->phone) $message .="Номер телефона: {$model->phone}<br>";
-						if($model->rating) $message .="Оценка: {$model->rating}<br>";
-						if($model->review) $message .="Комментарий: {$model->review}<br>";
+						if($model->phone) $message .="Номер телефона: {$model->phone}<br>";
+						//if($model->rating) $message .="Оценка: {$model->rating}<br>";
+						if($model->comment) $message .="Комментарий: {$model->comment}<br>";
 						//$message.="{$model->create_time}";
-						$message.="http://{$_SERVER['SERVER_NAME']}/admin/reviews/update/id/{$model->id}/list_id/{$model->id_list}";
+					//	$message.="http://{$_SERVER['SERVER_NAME']}/admin/reviews/update/id/{$model->id}/list_id/{$model->id_list}";
 						
 							$date = date('d.m.Y H:i');
 							$message .="Время заявки: {$date}<br>";	
 						
 
 
-						if(SiteHelper::sendMail("Получен новый отзыв на сайте!",$message,"minderov@amobile-studio.ru","minderov@amobile-studio.ru")) 
+						if(SiteHelper::sendMail("Получен новый вопрос/заявка сайта!",$message,Yii::app()->config->get('app.email'),"no-reply@alextour72.ru")) 
 				echo CJSON::encode("OK");
 			}
 			else
@@ -62,10 +63,23 @@ class SiteController extends FrontController
 	 */
 	public function actionIndex()
 	{
+		
 		$this->initGoogleMap();
         $this->title = Yii::app()->config->get('app.name');
 		
 		$data = array();
+		
+		$node = Structure::model()->findByUrl('main');
+        if ( !$node )
+            throw new CHttpException(404, 'Новостей не найдено');
+       
+		
+        if ( !empty($node->seo->meta_title) )
+            $this->title = $node->seo->meta_title;
+        else
+            $this->title = $node->name.' | '.Yii::app()->config->get('app.name');
+        Yii::app()->clientScript->registerMetaTag($node->seo->meta_desc, 'description', null, array('id'=>'meta_description'), 'meta_description');
+        Yii::app()->clientScript->registerMetaTag($node->seo->meta_keys, 'keywords', null, array('id'=>'keywords'), 'meta_keywords');
 		
 		// get partners
 		$data['partners'] = Partners::model()->findAll("status=:status", array(':status'=>Partners::STATUS_PUBLISH));

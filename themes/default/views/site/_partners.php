@@ -9,5 +9,5 @@
                         </a>
                     <? } ?>
                 </noindex>
-                <p class="a-right">Alex tour надежный партнер</p>
+                <p class="a-right"><?=Yii::app()->config->get('app.slogan');?></p>
             </div>

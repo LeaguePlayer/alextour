@@ -5,7 +5,7 @@
 						<ul class="dropdown-menu">
 							<!-- dropdown menu links -->
 							<li class="divider"></li>
-							<li><a href="#">Новости</a></li>
+							<li><a href="/newslist/view/url/news/country/<? echo $data->title; ?>">Новости</a></li>
                             
                             <? if( count( $data->pages ) > 0 ) { ?>
 								<? foreach ($data->pages as $page) { ?>

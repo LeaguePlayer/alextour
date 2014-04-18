@@ -131,15 +131,9 @@ class Structure extends EActiveRecord
     }
 
 
-    public function beforeSave()
-    {
-    	return true;
-    }
 
-    public function beforeDelete()
-    {
-        return true;
-    }
+
+
 
     public function afterDelete()
     {

@@ -48,7 +48,7 @@ class ReviewsController extends FrontController
 						
 
 
-						if(SiteHelper::sendMail("Получен новый отзыв на сайте!",$message,"minderov@amobile-studio.ru","minderov@amobile-studio.ru")) 
+						if(SiteHelper::sendMail("Получен новый отзыв на сайте!",$message,Yii::app()->config->get('app.email'),"no-reply@alextour72.ru")) 
 				echo CJSON::encode("OK");
 			}
 			else
