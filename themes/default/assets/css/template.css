@@ -461,9 +461,13 @@ footer {
     height: 24px;
     margin-right: 6px;
 }
+.vk
+{
+	background: url("../images/vk.png");
+}
 .twitter {
     background: url("../images/icon/social.png");
-	margin-left: 64px;
+	margin-left: 52px;
 }
 .photo {
     background: url("../images/icon/social.png") -32px 0;

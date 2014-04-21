@@ -1,7 +1,7 @@
 <?php
 
 	$cs = Yii::app()->clientScript;
-	$cs->registerCssFile($this->getAssetsUrl().'/css/style.css');
+	$cs->registerCssFile($this->getAssetsUrl().'/css/style.css?v=1.0');
 	$cs->registerCssFile($this->getAssetsUrl().'/css/fancybox/jquery.fancybox.css');
 	$cs->registerCssFile($this->getAssetsUrl().'/css/jquery.ui/overcast/jquery-ui-1.10.3.custom.min.css');
 	
@@ -112,9 +112,10 @@
                         <? if(Yii::app()->config->get('app.insta')){ ?><a href="<?=Yii::app()->config->get('app.insta')?>" class="social photo"></a><? } ?>
                         <? if(Yii::app()->config->get('app.fb')){ ?><a href="<?=Yii::app()->config->get('app.fb')?>" class="social fb"></a><? } ?>
                         <? if(Yii::app()->config->get('app.skype')){ ?><a href="<?=Yii::app()->config->get('app.skype')?>" class="social skype"></a><? } ?>
+                         <? if(Yii::app()->config->get('app.vk')){ ?><a href="<?=Yii::app()->config->get('app.vk')?>" class="social vk"></a><? } ?>
                     </div>
                     <div class="col-lg-2 a-right a-mobile-logo">
-                        <a href="#">
+                        <a target="_blank" href="http://amobile-studio.ru">
                             <img src="<?=$this->getAssetsUrl();?>/images/amobilelogo.png" alt="А-Мобайл" />
                         </a>
                     </div>
