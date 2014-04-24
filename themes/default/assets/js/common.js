@@ -99,9 +99,11 @@ var review = {   "title": "отзыв",
 				 
 				 "phone": "none",
 				 
+				 "for_order" : "none",
+				 
 				}; // 
 				
-var mail = {   "title": "заявку",
+var mail = {   "title": "нам сообщение",
 
 				 "display": "none",
 			
@@ -109,9 +111,23 @@ var mail = {   "title": "заявку",
 				 
 				 "phone": "block",
 				 
+				 "for_order" : "none",
+				 
 				}; // 
 				
-var targets = { "review" : review, "mail" : mail };
+var order = {   "title": "заявку",
+
+				 "display": "none",
+			
+				 "url": "/site/feedback",
+				 
+				 "phone": "block",
+				 
+				 "for_order" : "block",
+				 
+				}; // 
+				
+var targets = { "review" : review, "mail" : mail, "order" : order };
 
 // класс по работе с всплывающим окном
 var modalForm = {
@@ -126,7 +142,7 @@ var modalForm = {
 					$('*[data-meta="url"]').attr( 'action', targets[target].url );
 					$('*[data-meta="rating"]').css( 'display', targets[target].display );
 					$('*[data-meta="phone"]').css( 'display', targets[target].phone );
-				
+					$('*[data-meta="for_order"]').css( 'display', targets[target].for_order );
 				
 				//make fade bg
 				$('.over').show(0);

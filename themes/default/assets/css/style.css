@@ -299,9 +299,9 @@ h2 {
 	background:#dedede;
 	width:100%;
 	position:fixed;
-	height: 400px;
+	
 	top:50%;
-	margin-top:-200px;
+	margin-top:-19%;
 	z-index:15;
 	border-top:1px solid #626162;
 	border-bottom:1px solid #d6d6d6;
@@ -409,6 +409,7 @@ body .btn.green.small
 	margin-left:12px;
 	margin-bottom:7px;
 	margin-right:12px;
+	word-wrap:break-word;
 }	
 .s_content .s_part:last-child
 {
@@ -623,4 +624,12 @@ background-repeat: no-repeat;
 {
 	margin-top:20px;
 	margin-bottom:10px;	
+}
+.top_part .full_fill.bpart input,.top_part .full_fill.bpart
+{
+	width:100%;	
+}
+.top_part .bpart input.datepicker
+{
+	width:340px;	
 }

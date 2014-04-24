@@ -29,6 +29,7 @@ class NewsController extends FrontController
 	
 	public function actionView($id, $newsPage = null)
     {
+		
         $model = $this->loadModel('News', $id);
         $newslist = $model->list;
         $node = $newslist->node;

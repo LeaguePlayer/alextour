@@ -27,7 +27,7 @@ class Orders extends EActiveRecord
 			array('name, phone','required'),
             array('status, sort', 'numerical', 'integerOnly'=>true),
             array('name, phone', 'length', 'max'=>255),
-            array('comment, create_time, update_time', 'safe'),
+            array('comment, create_time, update_time, persons, departure_date, countries', 'safe'),
             // The following rule is used by search().
             array('id, name, phone, comment, status, sort, create_time, update_time', 'safe', 'on'=>'search'),
         );
@@ -52,6 +52,9 @@ class Orders extends EActiveRecord
             'sort' => 'Вес для сортировки',
             'create_time' => 'Дата создания',
             'update_time' => 'Дата последнего редактирования',
+			'persons'=>'Количество человек',
+			'departure_date'=>'Дата вылета',
+			'countries'=>'Интересующие страны',
         );
     }
 

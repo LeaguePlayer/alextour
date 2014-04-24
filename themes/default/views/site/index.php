@@ -8,10 +8,10 @@
                     </a>
                 </div>
                 <div class="col-lg-2" id="request">
-                    <a href="javascript:void(0);" data-target="mail" class="request-1 call_modal">
+                    <a href="javascript:void(0);" data-target="order" class="request-1 call_modal">
                         <h3>Оставить <br />заявку</h3>
                     </a>
-					<a href="javascript:void(0);" data-target="mail" class="request-2 call_modal">
+					<a href="javascript:void(0);" data-target="order" class="request-2 call_modal">
                         <h3>Жми сейчас</h3>
                     </a>
                 </div>

@@ -131,8 +131,19 @@
             <form class="ajaxForm" data-meta="url" action="/" method="GET">
             	<div class="top_part">
                 	<div class="left_p bpart">Как Вас зовут?<input data-type="field" data-field="name" type="text" name="data[name]" value="" /></div>
-                    <div class="right_p bpart">Ваш номер телефона?<input data-meta="phone" data-type="field" data-field="phone" type="text" name="data[phone]" value="" /></div>
+                    <div class="right_p bpart" data-meta="phone">Ваш номер телефона?<input data-type="field" data-field="phone" type="text" name="data[phone]" value="" /></div>
                 </div>
+                <div data-meta="for_order" class="for_order">
+                    <div class="top_part bottom_part">
+                        <div class="left_p bpart">Дата вылета<input class="datepicker" data-type="field" data-field="departure_date" type="text" name="data[departure_date]" value="" /></div>
+                        <div class="right_p bpart">Количество человек<input data-type="field" data-field="persons" type="text" name="data[persons]" value="" /></div>
+                     </div>
+                     
+                     <div class="top_part bottom_part">
+                        <div class="full_fill bpart">Перечислите интересующие страны<input data-type="field" data-field="countries" type="text" name="data[countries]" value="" />
+                        </div>
+                     </div>
+                 </div>
                 <div class="bottom_part">
                 	<textarea data-field="review" data-type="field" name="data[review]" placeholder="Комментарий"></textarea>
                 </div>
@@ -144,6 +155,9 @@
                     <div class="star"><input type="radio" name="data[rating]" value="4"></div>
                     <div class="star"><input type="radio" name="data[rating]" value="5"></div>
                 </div>
+                
+                
+                
                 <div class="bottom_part with_button">
                 	<input type="submit" value="Отправить заявку" class="btn green" />  или <a class="close_modal" href="javascrip:void(0):" style="margin-left:20px;">Отмена</a>
                 </div>

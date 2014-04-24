@@ -29,6 +29,7 @@ class NewslistController extends FrontController
 	
 	public function actionView($url = 'news', $country = false)
     {
+		
 		Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/bootstrap.js', CClientScript::POS_END);
 		
 		if($country)
@@ -45,10 +46,19 @@ class NewslistController extends FrontController
         $dataProvider = $newslist->newsSearch(null, $id_country);
 
         $this->buildMenu($node);
-        $this->breadcrumbs = $node->getBreadcrumbs();
+		
+		if($country)
+		{
+			$this->breadcrumbs = array(
+									"Страны мира"=>array("/countrylist/strani-mira"),
+								    "Новости {$country_model->title}",
+								 );
+		}
+		else
+        	$this->breadcrumbs = $node->getBreadcrumbs();
 
         if ( !empty($node->seo->meta_title) )
-            $this->title = $node->seo->meta_title.' | '.Yii::app()->config->get('app.name');
+            $this->title = $node->seo->meta_title;
         else
             $this->title = $node->name.' | '.Yii::app()->config->get('app.name');
         Yii::app()->clientScript->registerMetaTag($node->seo->meta_desc, 'description', null, array('id'=>'meta_description'), 'meta_description');
