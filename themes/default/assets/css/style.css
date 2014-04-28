@@ -648,7 +648,9 @@ background-repeat: no-repeat;
 }
 #s_nights_to, #s_nights_from
 {
-	width:55px !important;	
+	width:47px !important;	
+	padding-right:2px !important;
+	padding-left:2px !important;
 }
 #s_flyfrom, #s_country
 {
