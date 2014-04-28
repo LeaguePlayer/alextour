@@ -1,7 +1,7 @@
 <?php
 
 	$cs = Yii::app()->clientScript;
-	$cs->registerCssFile($this->getAssetsUrl().'/css/style.css?v=2.0');
+	$cs->registerCssFile($this->getAssetsUrl().'/css/style.css?v=2.1');
 	$cs->registerCssFile($this->getAssetsUrl().'/css/fancybox/jquery.fancybox.css');
 	$cs->registerCssFile($this->getAssetsUrl().'/css/jquery.ui/overcast/jquery-ui-1.10.3.custom.min.css');
 	

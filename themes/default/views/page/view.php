@@ -7,7 +7,7 @@
 
 <h1><?=$page->title?></h1>
 
-<div><?=$page->wswg_body?></div>
+<div class="cntent"><?=$page->wswg_body?></div>
 
 <? if($page->map) { ?></div><div class="map_in_page" id="map"></div><div class="container"><? } ?>
 
