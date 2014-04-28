@@ -636,23 +636,23 @@ background-repeat: no-repeat;
 }
 #s_adults, #s_child
 {
-	width:60px;	
+	width:80px !important;	
 }
 #s_stars
 {
-	width:90px;	
+	width:90px !important;	
 }
 #s_meal
 {
-	width:130px;	
+	width:130px !important;	
 }
 #s_nights_to, #s_nights_from
 {
-	width:55px;	
+	width:55px !important;	
 }
 #s_flyfrom, #s_country
 {
-	width:130px;	
+	width:130px !important;	
 }
 .cntent
 {
